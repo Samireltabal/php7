@@ -1,0 +1,14 @@
+{
+    "name": "esteban/php7",
+    "authors": [
+        {
+            "name": "estebanbluefire",
+            "email": "estebanbluefire@gmail.com"
+        }
+    ],
+	
+    "require": {
+
+    }
+
+}
