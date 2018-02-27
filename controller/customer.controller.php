@@ -15,6 +15,18 @@ class ControllerCustomer{
 		return $respuesta;
 
 	}
+	/*=============================================
+	DELETE CUSTOMER
+	=============================================*/
 
+	static public function ctrDeleteCustomer($datos){
+
+		$table = "customer";
+
+		$respuesta = ModelCustomer::mdlDeleteCustomer($table, $datos);
+
+		return $respuesta;
+
+	}
 
 }
