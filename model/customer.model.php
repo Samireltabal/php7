@@ -18,9 +18,9 @@ class ModelCustomer{
 
 	}
 
-	static public function mdlDeleteCustomer($table, $datos){
+	/*static public function mdlDeleteCustomer($table, $datos){
 
-		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :datos");
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $table WHERE id = :datos");
 
 		$stmt -> bindParam(":datos", $datos, PDO::PARAM_INT);
 
@@ -38,6 +38,6 @@ class ModelCustomer{
 
 		$stmt = null;
 
-	}
+	}*/
 
 }

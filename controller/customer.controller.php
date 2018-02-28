@@ -1,4 +1,6 @@
 <?php
+/*require_once "../model/customer.model.php";*/
+/*require_once "../model/connection.php";*/
 
 class ControllerCustomer{
 
@@ -19,7 +21,7 @@ class ControllerCustomer{
 	DELETE CUSTOMER
 	=============================================*/
 
-	static public function ctrDeleteCustomer($datos){
+	/*static public function ctrDeleteCustomer($datos){
 
 		$table = "customer";
 
@@ -27,6 +29,6 @@ class ControllerCustomer{
 
 		return $respuesta;
 
-	}
+	}*/
 
 }
