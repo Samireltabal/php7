@@ -80,11 +80,6 @@
             </table>';
         ?>
 
-
-      <div id="main">
-
-      </div>
-
         <!--=====================================
         MODAL WINDOW FOR REGISTRATION
         ======================================-->
@@ -140,6 +135,8 @@
 
 
                 <?php
+                  unset($_POST['regUsuario']);
+                  unset($_POST['regEmail']);
 
                   $registro = new ControllerCustomer();
                   $registro -> ctrRegisterCustomer();

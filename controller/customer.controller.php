@@ -40,6 +40,9 @@ class ControllerCustomer{
 
 				if($respuesta == "ok"){
 
+				unset($_POST['regUsuario']);
+				unset($_POST['regEmail']);
+
 				echo '<script> 
 
 						swal({

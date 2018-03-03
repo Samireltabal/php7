@@ -10,11 +10,11 @@ if(isset($_POST['id'])){
 
 		if($stmt -> execute()){
 
-			return "ok";
+			return json_encode("ok");
 
 		}else{
 
-			return "error";
+			return json_encode("error");
 
 		}
 
