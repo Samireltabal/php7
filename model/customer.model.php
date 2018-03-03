@@ -4,6 +4,10 @@ require_once "connection.php";
 
 class ModelCustomer{
 
+	/*=============================================
+	MOSTRAR USUARIO
+	=============================================*/
+
 	static public function mdlCustomer($table){
 
 		$stmt = Connect::connection()->prepare("SELECT * FROM $table");
@@ -17,27 +21,30 @@ class ModelCustomer{
 		$stmt = null;
 
 	}
+	/*=============================================
+	REGISTRO DE USUARIO
+	=============================================*/
 
-	/*static public function mdlDeleteCustomer($table, $datos){
+	static public function mdlRegistroUsuario($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("DELETE FROM $table WHERE id = :datos");
+		$stmt = Connect::connection()->prepare("INSERT INTO $tabla(nombre, email) VALUES (:nombre, :email)");
 
-		$stmt -> bindParam(":datos", $datos, PDO::PARAM_INT);
+		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+		$stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
 
-		if($stmt -> execute()){
+		if($stmt->execute()){
 
 			return "ok";
 
 		}else{
 
 			return "error";
-
+		
 		}
 
-		$stmt-> close();
-
+		$stmt->close();
 		$stmt = null;
 
-	}*/
+	}
 
 }

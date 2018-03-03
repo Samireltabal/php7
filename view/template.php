@@ -14,6 +14,8 @@
   <!---http://localhost/shop/frontend/-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="http://localhost/php7/view/css/plugins/sweetalert.css">
+  <link rel="stylesheet" href="http://localhost/php7/view/css/ventana-modal.css">
+  <link rel="stylesheet" href="http://localhost/php7/view/css/plantilla.css">
 
 	<!--=====================================
 	PLUGINS DE JAVASCRIPT
@@ -30,7 +32,7 @@
   <script src="http://localhost/php7/view/js/add-delete-update.js"></script>
 
 	<!--=====================================
-	Main Content
+  MAIN CONTENT
 	======================================-->
 </head>
 <body>
@@ -42,95 +44,7 @@
   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalRegistro">Create new Customer</button>
   <!--<a href="#modalRegistro" data-toggle="modal">Crear una cuenta</a>-->
 
-        <!--=====================================
-        VENTANA MODAL PARA EL REGISTRO
-        ======================================-->
 
-        <div class="modal fade modalFormulario" id="modalRegistro" role="dialog">
-
-            <div class="modal-content modal-dialog">
-
-                <div class="modal-body modalTitulo">
-
-                  <h3 class="backColor">REGISTRARSE</h3>
-
-                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  
-
-              <!--=====================================
-              REGISTRO DIRECTO
-              ======================================-->
-
-              <form method="post" onsubmit="return registroUsuario()">
-                
-              <hr>
-
-                <div class="form-group">
-                  
-                  <div class="input-group">
-                    
-                    <!--<span class="input-group-addon">
-                      
-                      <i class="glyphicon glyphicon-user"></i>
-                    
-                    </span>-->
-
-                    <input type="text" class="form-control" id="regUsuario" name="regUsuario" placeholder="Nombre Completo" required>
-
-                  </div>
-
-                </div>
-
-                <div class="form-group">
-                  
-                  <div class="input-group">
-                    
-                    <!--<span class="input-group-addon">
-                      
-                      <i class="glyphicon glyphicon-envelope"></i>
-                    
-                    </span>-->
-
-                    <input type="email" class="form-control" id="regEmail" name="regEmail" placeholder="Correo Electrónico" required>
-
-                  </div>
-
-                </div>
-
-                <div class="form-group">
-                  
-                  <div class="input-group">
-                    
-                    <!--<span class="input-group-addon">
-                      
-                      <i class="glyphicon glyphicon-lock"></i>
-                    
-                    </span>-->
-
-                    <input type="password" class="form-control" id="regPassword" name="regPassword" placeholder="Contraseña" required>
-
-                  </div>
-
-                </div>
-
-
-
-                <?php
-
-                  $registro = new ControllerCustomer();
-                  $registro -> ctrRegisterCustomer();
-
-                ?>
-                
-                <input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">  
-
-              </form>
-
-                </div>
-              
-            </div>
-
-        </div>
 
   <br><br>
 	       <?php
@@ -170,6 +84,77 @@
       <div id="main">
 
       </div>
+
+        <!--=====================================
+        MODAL WINDOW FOR REGISTRATION
+        ======================================-->
+
+        <div class="modal fade modalFormulario" id="modalRegistro" role="dialog">
+
+            <div class="modal-content modal-dialog">
+
+                <div class="modal-body modalTitulo">
+
+                  <h3 class="backColor">REGISTER</h3>
+
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  
+
+              <!--=====================================
+              DIRECT REGISTRATION
+              ======================================-->
+
+              <form method="post" onsubmit="return registroUsuario()">
+
+                <div class="form-group">
+                  
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon">
+                      
+                      <i class="glyphicon glyphicon-user"></i>
+                    
+                    </span>
+
+                    <input type="text" class="form-control" id="regUsuario" name="regUsuario" placeholder="Name" required>
+
+                  </div>
+
+                </div>
+
+                <div class="form-group">
+                  
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon">
+                      
+                      <i class="glyphicon glyphicon-envelope"></i>
+                    
+                    </span>
+
+                    <input type="email" class="form-control" id="regEmail" name="regEmail" placeholder="Email" required>
+
+                  </div>
+
+                </div>
+
+
+                <?php
+
+                  $registro = new ControllerCustomer();
+                  $registro -> ctrRegisterCustomer();
+
+                ?>
+                
+                <input type="submit" class="btn btn-default backColor btn-block" value="SEND">  
+
+              </form>
+
+                </div>
+              
+            </div>
+
+        </div>
 
 </div>
 </body>
